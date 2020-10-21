@@ -1,7 +1,4 @@
 package ua.step.practice;
-
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
 import java.util.Random;
 
 /**
@@ -18,9 +15,20 @@ public class Task02 {
         Random rnd = new Random(seed);
 
         // TODO: Пишите код здесь
-        for (int i = 0; i < 30; i++) {
-            System.out.print(rnd.nextInt(51+70) - 70); // 0..120 - 70 = -70..+50
-            System.out.print(" ");
+        int[] arr=new int[30];
+        int max=arr[0];
+        int min=arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i]=rnd.nextInt(51+70) - 70;
+            if(arr[i]>max)
+            {
+                max=arr[i];
+            }
+            if(arr[i]<min)
+            {
+                min=arr[i];
+            }
         }
+        System.out.println(min+" "+max);
     }
 }

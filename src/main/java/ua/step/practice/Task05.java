@@ -24,5 +24,29 @@ public class Task05 {
         Random rnd = new Random(seed);
 
         // TODO: Пишите код здесь
+        int[] arr1 = new int[10];
+        int[] arr2=new int[10];
+        for (int i = 0; i < arr1.length; i++) {
+            arr1[i] = rnd.nextInt(6 + 5) - 5;
+        }
+        con:
+        for (int i=0;i<arr1.length;i++) {
+            int kol=0;
+            for(int p=0;p<arr2.length;p++){
+                if(arr1[i]==arr2[p]) {
+                    continue con;
+                }
+            }
+            for(int j=0;j<arr1.length;j++) {
+                if(arr1[i]==arr1[j]) {
+                    kol++;
+                }
+            }
+            if(kol>1) {
+                arr2[i]=arr1[i];
+                System.out.println(arr1[i]+" "+kol+"\n");
+            }
+        }
+
     }
 }

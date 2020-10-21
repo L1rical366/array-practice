@@ -26,11 +26,38 @@ public class Task07 {
         Random rnd = new Random(seed);
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите размер массива: ");
+        System.out.print("Vvedite razmer massiva: ");
         int len = scanner.nextInt();
 
         int[] arr;
-        // TODO: Пишите код здесь
+        arr = new int[len];
+        for (int i = 0; i < len; i++) {
+            arr[i] = rnd.nextInt(11) + 3;
+        }
+        for(int i = 0; i < arr.length; i++){
+            for(int j = 0, k = 0; j < arr.length - i - 1; j++){
+                if(arr[j] > arr[j + 1]){
+                    k = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j + 1] = k;
+                }
+            }
+        }
+        for (int i = 0, k = 1; i < arr.length - 1; i++){
+            if(arr[i] == arr[i + 1] ){
+                k++;
+            }
+            else if(arr[i] != arr[arr.length - 1]) {
+                System.out.println(arr[i] + "  " + k + " ");
+                k = 1;
+            }
+            else if(arr[i] == arr[arr.length - 1] ){
+                k++;
+            }
+            if(i + 1 == arr.length - 1) {
+                System.out.println(arr[i + 1] + "  " + k + " ");
+            }
+        }
 
     }
 }

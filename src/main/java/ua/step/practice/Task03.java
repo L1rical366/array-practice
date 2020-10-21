@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Task03 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите размер массива: ");
+        System.out.print("Vvedite razmer massiva: ");
         int len = scanner.nextInt();
 
         // TODO: Пишите код здесь
@@ -19,5 +19,27 @@ public class Task03 {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = scanner.nextInt();
         }
+        int k=0;
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[0]==arr[i])
+            {
+                k=0;
+            }
+            else
+            {
+                k=1;
+                break;
+            }
+        }
+        if(k==0)
+        {
+            System.out.println("Yes\t");
+        }
+        else
+        {
+            System.out.println("No\t");
+        }
+
     }
 }

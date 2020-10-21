@@ -30,6 +30,16 @@ public class Task06 {
         // Использовать для генерирования элементов массива
         Random rnd = new Random(seed);
 
-        // TODO: Пишите код здесь
+        int[] arr = new int[10];
+        for (int i = 0; i < 10; i++) {
+            arr[i] = rnd.nextInt(11) - 5;
+        }
+
+        for (int i = 0, k = 0; i < arr.length; i++, k = 0) {
+            for(int j = 0; j < arr.length; j++){
+                if (i != j && arr[i] == arr[j]) k++;
+            }
+            if(k == 0) System.out.println(arr[i] + "  " + i + " ");
+        }
     }
 }

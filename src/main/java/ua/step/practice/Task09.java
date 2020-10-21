@@ -29,8 +29,22 @@ public class Task09 {
         int len = scanner.nextInt();
 
         int[] arr;
-        // TODO: Пишите код здесь
-
-
+        arr = new int[len];
+        System.out.print("Исходный массив [");
+        for (int i = 0; i < len; i++) {
+            arr[i] = rnd.nextInt(len + 1 + 2) - 2;
+            if (i == len - 1) System.out.print(arr[i]);
+            else System.out.print(arr[i] + ", ");
+        }
+        System.out.println("]");
+        System.out.print("Результат [");
+        for (int i = 0; i < len; i++) {
+            if (arr[i] < 0) {
+                arr[i] = arr[i] * arr[i];
+            }
+            if (i == len - 1) System.out.print(arr[i]);
+            else System.out.print(arr[i] + ", ");
+        }
+        System.out.println("]");
     }
 }

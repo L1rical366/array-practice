@@ -33,5 +33,36 @@ public class Task08 {
 
         char[] arr;
         // TODO: Пишите код здесь
+        arr = new char[len];
+        char[] a = new char[] {'a', 'b', 'c', 'd', 'e', 'f', 'g','h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+        for (int i = 0; i < len; i++) {
+            arr[i] = a[rnd.nextInt(25)];
+        }
+        char tmp = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    tmp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = tmp;
+                }
+            }
+        }
+        for(int i = 0; i < arr.length; i++){
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+        for (int i = 0, k = 1; i < arr.length - 1; i++) {
+            if(arr[i] == arr[i + 1]){
+                k++;
+            }
+            else if( k > 2){
+                System.out.println(arr[i] + " - " + k + " раза");
+                k = 1;
+            }
+            if(i == arr.length - 2 && k > 2){
+                System.out.println(arr[i] + " - " + k + " раза");
+            }
+        }
     }
 }
